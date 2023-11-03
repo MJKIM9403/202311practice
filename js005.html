@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div id="alert" class="alert-box">
+<p class="text">알림창 제목</p>
+<p class="text">알림창 세부내용</p>
+
+
+<button onclick="alertControl('none')">
+닫기
+</button>
+</div>
+
+<button onclick="alertControl('block', 'black')">버튼1</button>
+<button onclick="alertControl('block', 'red')" >버튼 2</button>
+
+<script>
+console.log();
+
+
+
+function alertControl(파라미터1, 파라미터2){
+document.getElementById('alert').style.display = 파라미터1;
+document.getElementById('alert').style.backgroundColor = 파라미터2;
+document.getElementsByClassName('text')[0].style.fontSize = '50px';
+
+// document.getElementsByClassName('text')[0] -> 0번이라 첫번재꺼
+
+
+
+}
+
+
+
+</script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 과제. 버튼 누르면 modal 창 띄우기 (jQuery 사용하기) -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    
+
+    <div class="black-bg">
+        <div class="white-bg">
+            <h4>로그인하세요</h4>
+            <button class="btn btn-danger" id="close">닫기</button>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn_toggler" >누르시오.</button>
+    </div>
+
+    <script>
+        $('.btn_toggler').on('click', function(){
+        $('.black-bg').fadeToggle('show');
+
+        $('.btn-danger').on('click', function(){
+            $('.black-bg').fadeOut();
+
+        })
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>

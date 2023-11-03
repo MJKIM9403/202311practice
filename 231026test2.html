@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="css/main2.css">
+
+<!-- 실습2. 위 문제가 너무 쉬운 사람만 마우스가 올라가고 해당 메뉴바의 자식에 마우스가 올라갔을때는 안사라지고 완전히 바깥으로 같을때에만 사라지게 해보자  -->
+<div id="wrap">
+    <div id="header">
+        <h1>
+            <a href="#">logo</a>
+        </h1>
+        <ul id="gnb" class="gnbb">
+            <li>
+                <a href="#">menu1</a>
+                <div class="snb">
+                    <ul>
+                        <li>menu1-1</li>
+                        <li>menu1-2</li>
+                        <li>menu1-3</li>
+                        <li>menu1-4</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">menu2</a>
+                <div class="snb">
+                    <ul>
+                        <li>menu1-1</li>
+                        <li>menu1-2</li>
+                        <li>menu1-3</li>
+                        <li>menu1-4</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">menu3</a>
+                <div class="snb">
+                    <ul>
+                        <li>menu1-1</li>
+                        <li>menu1-2</li>
+                        <li>menu1-3</li>
+                        <li>menu1-4</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">menu4</a>
+                <div class="snb">
+                    <ul>
+                        <li>menu1-1</li>
+                        <li>menu1-2</li>
+                        <li>menu1-3</li>
+                        <li>menu1-4</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul id="util">
+            <li><a href="#">login</a></li>
+            <li><a href="#">join</a></li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementsByClassName('gnbb').addEventListner('mouseover',function(){
+            document.getElementsByClassName('snb').classList.add('show');
+        })
+
+    
+    </script>
+
+
+</div>
+
+<script>
+
+document.getElementsByClassName
+document.getElementsByName
+document.getElementsByTagName
+document.querySelector
+
+function 함수명(){}
+
+addEventListner
+
+매개변수(파라미터)
+
+</script>

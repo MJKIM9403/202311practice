@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="quiz">
+    <h4>물에 빠지면 누구먼저 구할 것임?</h4>
+    <button>친구</button>
+    <button>부모님</button>
+    <button>반려동물</button>
+    <button>기타</button>
+</div>
+
+<script>
+    $("#quiz").on('click', function (e){
+        switch (e.target.innerHTML){
+            case '친구' :
+                alert('인싸네요');
+                break;
+                //break문은 안걸면 나머지 alert들도 다 나온다.
+            case '부모님' :
+                alert('효자네요');
+                break;
+            case '반려동물' :
+                alert('동물애호가네요');
+                break;
+            default :
+                alert('아무것도 해당안됨')};
+
+    });
+
+</script>
+
+</body>
+</html>

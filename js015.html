@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+<!--        <div class="col-sm-4">-->
+<!--            <img src="https://via.placeholder.com/600" class="w-100">-->
+<!--            <h5>Card title</h5>-->
+<!--            <p>가격 : 70000</p>-->
+<!--        </div>-->
+<!--        <div class="col-sm-4">-->
+<!--            <img src="https://via.placeholder.com/600" class="w-100">-->
+<!--            <h5>Card title</h5>-->
+<!--            <p>가격 : 70000</p>-->
+<!--        </div>-->
+<!--        <div class="col-sm-4">-->
+<!--            <img src="https://via.placeholder.com/600" class="w-100">-->
+<!--            <h5>Card title</h5>-->
+<!--            <p>가격 : 70000</p>-->
+<!--        </div>-->
+    </div>
+<div id ="price" class="container">
+        <button class="btn btn-danger my-3">가격순정렬</button>
+</div>
+
+<div id ="more" class="container">
+    <button class="btn btn-danger my-3">상품 더보기</button>
+</div>
+
+<div id ="order" class="container">
+        <button class="btn btn-danger my-3">다나가</button>
+</div>
+
+<div id ="filter" class="container">
+        <button class="btn btn-danger my-3">6만원 이하</button>
+</div>
+
+</div>
+<!--1. on click 이벤트-->
+<!--2. ajax 요청 코드-->
+
+<script>
+
+    var arr = [11,20,40,5,1];
+
+//filter : 조건에 맞는 자료만 남길 때 사용
+//var newArr = arr.filter(function (a){
+//     return a > 10;
+// })
+//     console.log(newArr);
+
+//     var newArr = arr.map(function (a){
+//         return a * 5;
+//     })
+// console.log(newArr);
+
+    $('#more').on('click', function (){
+    $.get('https://gist.githubusercontent.com/leeanJP/3ee931feb393f95895bd652344d1bf13/raw/d255a58907156433ef61de8401bf16564df4407f/more1.json')
+        .done(function (data){
+            //요청 완료되면 작동
+        console.log(data);
+        var jsonData = JSON.parse(data);
+        console.log(typeof jsonData);
+        console.log(jsonData);
+            // 실습. 위에서 가져온 데이터로 카드 3개 만들기
+        jsonData.forEach(function (item, index){
+            $('.row').append(`<div class="col-sm-4">
+           <img src="https://via.placeholder.com/600" class="w-100">
+           <h5>${item.title}</h5>
+           <p>가격 : ${item.price}</p>
+       </div>`);
+        })
+        }).fail(function(error){
+    }).always((function (){
+    }));//ajax
+    });//클릭function
+
+
+    var products = [
+        { id : 0, price : 70000, title : 'Blossom Dress' },
+        { id : 1, price : 50000, title : 'Springfield Shirt' },
+        { id : 2, price : 60000, title : 'Black Monastery' }
+    ];
+    //div없앤 다음  포이치로 div다시 만들기
+    products.forEach(function (item,index){
+        $('.row').append(`<div class="col-sm-4">
+           <img src="https://via.placeholder.com/600" class="w-100">
+           <h5>${item.title}</h5>
+           <p>가격 : ${item.price}</p>
+       </div>`);
+    });
+
+    //---가격순 정렬
+    $('#price').click(function (){
+        products.sort(function (a,b){
+            return a.price - b.price
+        })
+        $('.row').html('');
+    products.forEach(function (item,index){
+            $('.row').append(`<div class="col-sm-4">
+           <img src="https://via.placeholder.com/600" class="w-100">
+           <h5>${item.title}</h5>
+           <p>가격 : ${item.price}</p>
+       </div>`)
+        });})
+
+
+//---필터
+        $('#filter').click(function (){
+            var productFilter = products.filter(function (item){
+                return item.price <= 60000 ;
+            })
+            $('.row').html('');
+            productFilter.forEach(function (item){
+                $('.row').append(`
+            <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${item.title}</h5>
+                <p>가격 : ${item.price}</p>
+            </div>`
+                )
+            })
+        });
+
+
+//---다나가 정렬
+    $('#order').click(function (){
+        products.sort(function (a, b){
+            if(a.title < b.title){
+                return 1
+            }else {
+                return -1
+            }
+        })
+        $('.row').html('');
+        products.forEach(function (item,index){
+            $('.row').append(`
+            <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${item.title}</h5>
+                <p>가격 : ${item.price}</p>
+            </div>`
+            )
+        })
+    })
+
+
+</script>
+
+</body>
+</html>

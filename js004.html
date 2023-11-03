@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼 누르면 색 바뀌기</title>
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="alert" class="alert-box">
+        알림창
+    <button onclick="alertClose('')">
+        닫기</button> 
+    </div>
+    <button onclick="alertColor('')">
+        빨강
+    </button>
+    <button onclick="alertColor2('')">
+        파랑
+    </button>
+</body>
+
+<script>
+    function alertColor () {
+    document.getElementById('alert').style.display='block'
+    document.getElementById('alert').style.background = 'red' 
+    }
+    function alertColor2(){
+        document.getElementById('alert').style.display='block'
+        document.getElementById('alert').style.background = 'blue'
+    }
+    function alertClose() {
+        document.getElementById('alert').style.display='none'
+    }
+</script>
+
+</html>

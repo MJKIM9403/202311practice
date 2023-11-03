@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>231026</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="alert" class="alert-box"> 
+        알림창
+        <button onclick="alertControl2('alert','none')" >
+        닫기
+        </button>
+    </div>
+    <div id="alert2" class="alert-box" style="background-color: blueviolet;"> 
+        알림창2
+        <button onclick="alertControl2('alert2','none')" >
+        닫기
+        </button>
+    </div>
+        <button onclick="alertControl('block')">
+        알림창 보이기
+        </button>
+
+    <!-- <button onclick="document.getElementById('alert').style.display='block'">알림창 보여줘!</button>
+    <button onclick="document.getElementById('alert').style.display='none'">닫기</button> -->
+
+    <!-- getElementById : 아이디를 가지고 요소를 가져오겠다. 
+        innerText : 오른쪽 값을 넣어달라. -->
+
+    <script>
+
+function alertControl(파라미터) {
+    document.getElementById('alert').style.display=파라미터;
+    document.getElementById('alert2').style.display=파라미터;
+}
+function alertControl2(파라미터1, 파라미터2) {
+    document.getElementById(파라미터1).style.display=파라미터2;
+}
+
+// function alertOpen(){
+//     document.getElementById('alert').style.display='block';
+// }
+// function alertClose(){
+//     document.getElementById('alert').style.display='none';
+// }
+    </script>
+    <!-- 스크립트는 주로 제일 밑에 적는다 -->
+</body>
+
+</html>

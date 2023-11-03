@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main3.css">
+    
+</head>
+
+<body>
+<div class="card-group container">
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+            <h5 class="title">Card title</h5>
+            <p class="author">가격 : 70000</p>
+            <button class="btn btn-danger">쿠키굽기</button>
+        </div>
+    </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    //Ajax 요청
+    // $.get('요청할 url')
+    //     .done(function(data){
+    //     //요청이 완료 되었을 때 동작할 코드
+    //
+    //     }).fail(function(error){
+    //     //요청이 실패했을 때 동작할 코드
+    //
+    //     }).always(function(){
+    //     //성공여부와 상관없이 무조건 동작할 코드
+    //
+    //     })
+
+    // $.get('https://korea-webtoon-api.herokuapp.com/?perPage=1&page=3&service=kakao&updateDay=sun')
+    //     .done(function(data){
+    //         //요청이 완료 되었을 때 동작할 코드
+    //         var webtoon = data.webtoons[0];
+    //         console.log(data);
+    //         $('img').eq(0).attr("src", webtoon.img)
+    //         $('.title').eq(0).html(webtoon.title);
+    //         $('.author').eq(0).html(webtoon.author);
+    //         $('img').eq(0).on('click', function (){
+    //             window.location.href = webtoon.url;
+    //         })
+    //     }).fail(function(error){
+    //     //요청이 실패했을 때 동작할 코드
+    //     console.log(error);
+    // }).always(function(){
+    //     //성공여부와 상관없이 무조건 동작할 코드
+    //     console.log('always')
+    // })
+
+///---
+    $.get('https://korea-webtoon-api.herokuapp.com/?updateDay=tue')
+        .done(function(data){
+            //요청이 완료 되었을 때 동작할 코드
+            for (let i = 0; i < data.webtoons.length ; i++) {
+                let webtoon = data.webtoons[i];
+                //var 에서 let으로 바꾸니 되네...
+                $('img').eq(i).attr("src", webtoon.img)
+                $('.title').eq(i).html(webtoon.title);
+                $('.author').eq(i).html(webtoon.author);
+                $('img').eq(i).on('click', function (){
+                    window.location.href = webtoon.url;
+                })
+                $('.title').eq(i).on('click', function (){
+                    window.location.href = webtoon.url;
+                    // $(location).attr("href", webtoon.url);
+                })
+                console.log(data);
+            }
+        }).fail(function(error){
+        //요청이 실패했을 때 동작할 코드
+        console.log(error);
+    }).always(function(){
+        //성공여부와 상관없이 무조건 동작할 코드
+        console.log('always')
+    })
+//---
+
+    // $.get('https://korea-webtoon-api.herokuapp.com/?updateDay=tue')
+    //     .done(function(data){
+    //
+    // var webtoon = data.webtoons;
+    // webtoon.forEach(function (item, i) {
+    //     console.log(item.url);
+    //     $('img').eq(i).attr("src", item.img);
+    //     $('.title').eq(i).html(item.title);
+    //     $('.author').eq(i).html(item.author);
+    //     $('.title').eq(i).on('click', function(){
+    //         $(location).attr('href',item.url);
+    //     });
+    //     }).fail(function(error){
+    //     //요청이 실패했을 때 동작할 코드
+    //     console.log(error);
+    // }).always(function(){
+    //     //성공여부와 상관없이 무조건 동작할 코드
+    //     console.log('always')})
+
+
+    // fetch('https://korea-webtoon-api.herokuapp.com/search?keyword=갓오브하이스쿨')
+    //     .then(res => res.json())
+    //     // >> jQuery의 $.get() JSON으로 데이터를 받아서 array/object 형태로 자료를 바꿔줌
+    // .then(function (data){
+    //     console.log(data)
+    // }).catch(function (error){
+    //     console.log('실패함');
+    // })
+    //
+
+
+
+    // js013.html을 생성하고 아래의 코드를 붙여넣은 뒤 각 상품의 title 과 price를 html에 넣어서 완성해보자. (반복문 사용)
+    var products = [
+        { id : 0, price : 70000, title : 'Blossom Dress' },
+        { id : 1, price : 50000, title : 'Springfield Shirt' },
+        { id : 2, price : 60000, title : 'Black Monastery' }
+    ];
+
+//반복문 for
+    // for (let i = 0; i < products.length; i++){
+    //     $('.card-body h5').eq(i).html(products[i].title)
+    //     $('.card-body p').eq(i).html(products[i].price)
+    //
+    // }
+    //반복문
+//eq(0) : 0번째 순서
+
+    console.log(1 + "3");
+    //숫자 + 문자 = 문자
+    //숫자 + 숫자 = 숫자
+    var a = '풀스택개발자';
+    console.log("문자 " + a + " 문자");
+    console.log(`문자 ${a} 문자`)
+    //1옆에있는 `` 기호를 쓴다.
+
+
+    //반복문이 어려우면 하나씩 해서 바꿔준다.
+    for (let i = 0; i < products.length; i++){
+       cardChange(i)
+    }
+    function cardChange(num){
+        $('.card-body h5').eq(num).html(products[num].title)
+        $('.card-body p').eq(num).html(products[num].price)
+    }
+//반복문+function문
+
+</script>
+</body>
+</html>
